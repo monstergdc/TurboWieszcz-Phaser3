@@ -2,23 +2,17 @@
 /*
 Turbo Wieszcz ++ Phaser3 version (JavaScript), v2.0
 (c)2022 noniewicz.com
-cre: 20220514 1900-2300
-upd: 20220515 1350-1505, 1530-1610, 1635-1800, 1830-1930, 2100-2310
-upd: 20220516 1615-1655, 1745-1815, 1900-1945, 2010-2105, 2140-2305, 2340-0000
-upd: 20220517 0005-0130, 1140-1240, 1320-1355
-upd: 20220518 1830-1910, 1930-2020, 2120-2255
-upd: 20220519 0110-0140, 1330-1420, 1705-1730, 1830-1855, 1925-2125, 2225-2330
-upd: 20220520 0040-0220, 1335-1535, 1555-1605, 1750-1925
+cre: 20220514
+upd: 20220515, 16, 17, 18, 19, 20
 */
 
 /* TODO:
 # MAIN:
-1. FIX: w scroll uwzgl. curr. font + size for stop condition
+1. FIX: in scroll use always curr. font + size for stop condition
 
 # LATER:
-1. js minify
-2. test: ffox / egde / opera / brave / chrome
-.3. @git
+1. test: ffox / egde / opera / brave / chrome
+2. minify + upd html
 */
 
 
