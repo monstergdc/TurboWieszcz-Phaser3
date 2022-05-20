@@ -17,6 +17,8 @@ also inspired by version written for iPhone by Tomek (Grych) Gryszkiewicz and hi
 
 Note: there are more versions - see [here](http://noniewicz.com/product.php?l=2&key=tw) for info.
 
+This one is now official online versions of Turbo Wieszcz - [see here](http://noniewicz.com/tw).
+
 ---
 
 * created: 2022-05-20
