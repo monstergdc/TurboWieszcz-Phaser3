@@ -3,7 +3,7 @@
 Turbo Wieszcz ++ Phaser3 version (JavaScript), v2.0
 (c)2022 noniewicz.com
 cre: 20220514
-upd: 20220515, 16, 17, 18, 19, 20
+upd: 20220515, 16, 17, 18, 19, 20, 26
 */
 
 /* TODO:
@@ -373,10 +373,12 @@ class TWMain extends Phaser.Scene {
           if (event.keyCode === Phaser.Input.Keyboard.KeyCodes.V) next_tts();
         }, this);
 
-        this.bg = this.add.image(this.width/2, this.height/2, 'bgx');
+        this.bg = this.add.image(this.width/2, this.height/2, 'bgx').setInteractive();
         this.bgf = this.add.image(this.width/2, this.height/2, 'bgface');
         this.bg.setAlpha(0);
         this.bgf.setAlpha(0);
+
+        this.bg.on('pointerup', function() {this.onNewPoemPrelude();}, this);
 
         popup = false;
         this.menu = createmenu(this, 'main');
