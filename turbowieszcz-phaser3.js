@@ -3,16 +3,11 @@
 Turbo Wieszcz ++ Phaser3 version (JavaScript), v2.0
 (c)2022 noniewicz.com
 cre: 20220514
-upd: 20220515, 16, 17, 18, 19, 20, 26
+upd: 20220515, 16, 17, 18, 19, 20, 26, 27
 */
 
 /* TODO:
-# MAIN:
-1. FIX: in scroll use always curr. font + size for stop condition
-
-# LATER:
-1. test: ffox / egde / opera / brave / chrome
-2. minify + upd html
+- ?
 */
 
 
@@ -622,7 +617,8 @@ class TWAbout extends Phaser.Scene {
             if (event.keyCode === Phaser.Input.Keyboard.KeyCodes.W) this.more();
         }, this);
 
-        this.add.image(this.width/2, this.height/2, 'bg');
+        const img = this.add.image(this.width/2, this.height/2, 'bg').setInteractive();
+        img.on('pointerup', function() {this.getBack();}, this);
 
         this.txt = this.add.text(250, 10, 'TURBO WIESZCZ++', { font: '72px SHLOP', fill: '#ff2020' });
         this.txt.setShadow(3, 3, "#222222", 2+4, false, true);
