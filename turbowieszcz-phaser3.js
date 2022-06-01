@@ -4,6 +4,7 @@ Turbo Wieszcz ++ Phaser3 version (JavaScript), v2.0
 (c)2022 noniewicz.com
 cre: 20220514
 upd: 20220515, 16, 17, 18, 19, 20, 26, 27
+upd: 20220601
 */
 
 /* TODO:
@@ -19,6 +20,7 @@ const ryms = ['ABAB', 'ABBA', 'AABB'];
 var powt = 0;
 var twauto = 0;
 var msx = 0;
+const msx_types = ['NIE', 'C64', 'ZX48'];
 var fnt_size = 1;
 const fnt_sizes = ['16', '20', '24', '28'];
 var fnt_type = 1;
@@ -83,7 +85,8 @@ function next_auto()
 
 function next_msx()
 {
-    msx = (msx+1)&1;
+    msx = msx+1;
+    if (msx == msx_types.length) msx = 0;
 }
 
 function next_font_size()
@@ -220,7 +223,8 @@ class TWTitle extends Phaser.Scene {
         this.load.spritesheet('adam_sprites', 'assets/cyberadam.jpg', { frameWidth: 40, frameHeight: 40 });
         this.load.audio('next', 'assets/twstart.mp3');
         this.load.audio('click', 'assets/click.mp3');
-        this.load.audio('msx', 'assets/twzx.mp3');
+        this.load.audio('msx_c64', 'assets/twc64.mp3');
+        this.load.audio('msx_zx', 'assets/twzx.mp3');
     }
 
     create ()
@@ -255,7 +259,8 @@ class TWTitle extends Phaser.Scene {
             this.a.push(this.s[y][x]);
         }
 
-        this.music = this.sound.add('msx', { loop: true });
+        this.music_c64 = this.sound.add('msx_c64', { loop: true });
+        this.music_zx = this.sound.add('msx_zx', { loop: true });
         this.musicOnOff();
 
         this.tweens.add({
@@ -305,7 +310,12 @@ class TWTitle extends Phaser.Scene {
     startTWScene() { this.switching = false; this.scene.start("TWMain"); }
     startAbout() { this.switching = false; this.scene.start("TWAbout", {from: 'title'}); }
 
-    musicOnOff() { if (msx) this.music.play(); else this.music.stop(); }
+    musicOnOff() {
+        this.music_c64.stop();
+        this.music_zx.stop();
+        if (msx == 1) this.music_c64.play();
+        if (msx == 2) this.music_zx.play();
+    }
 
     getRandomInt(max) { return Math.floor(Math.random() * max); }
 }
@@ -799,7 +809,7 @@ class TWMenu extends Phaser.Scene {
         if (n == 4) t = '(A) Tryb auto: '+yn[twauto];
         if (n == 5) t = '(Z) Rozmiar czcionki: '+fnt_sizes[fnt_size];
         if (n == 6) t = '(F) Czcionka: '+fnt_types_disp[fnt_type];
-        if (n == 7) t = '(M) Muzyka: '+yn[msx];
+        if (n == 7) t = '(M) Muzyka: '+msx_types[msx];
         if (n == 8) t = '(O) O programie';
         if (n == 9) t = '(ESC) Powrót';
         if (n == 10) t = '(S) Start';
