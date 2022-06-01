@@ -652,7 +652,7 @@ class TWAbout extends Phaser.Scene {
           "oraz w Amiga E przez Tomka (Grycha) Gryszkiewicza.\n\n"+
           "Historia programu została opisana w magazynie Ha!art 47 3/2014.\n\n"+
           "Kod + grafika + efekty audio: MoNsTeR/GDC\n"+
-          "Muzyka: V0Yager (z wersji na ZX Spectrum)\n"+
+          "Muzyka: Freeak (wer. Commodore C-64), V0Yager (wer. ZX Spectrum)\n"+
           "Czcionki: różne darmowe (Maszyna Plus, MaszynaAEG, Shlop)\n"+
           "Czaszki: Peter Keenan, znalezione @ Artstation.com";
 
