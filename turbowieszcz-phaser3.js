@@ -4,7 +4,7 @@ Turbo Wieszcz ++ Phaser3 version (JavaScript), v2.0
 (c)2022 noniewicz.com
 cre: 20220514
 upd: 20220515, 16, 17, 18, 19, 20, 26, 27
-upd: 20220601
+upd: 20220601, 06
 */
 
 /* TODO:
@@ -673,7 +673,7 @@ class TWAbout extends Phaser.Scene {
     getBack() { if (this.from == 'title') this.startMenu(); else this.startTWScene(); }
     startTWScene() { this.scene.start("TWMain"); }
     startMenu() { this.scene.start("TWTitle"); }
-    more() { openExternalLink('http://noniewicz.com/product.php?l=2&key=tw'); }
+    more() { openExternalLink('https://noniewicz.com/product.php?l=2&key=tw'); }
 }
 
 
